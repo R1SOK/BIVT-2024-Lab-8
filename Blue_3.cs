@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +25,7 @@ namespace Lab_8
 
         public Blue_3(string input) : base(input)
         {
-            _output = null;  
+            _output = null;
             _countLetter = new (char, int)[0];
             _num = 0;
         }
@@ -54,7 +54,7 @@ namespace Lab_8
             int index = indexofNull + 1;
             while (index < str.Length)
             {
-                if ((Char.IsLetter(str[index]) || str[index] == '\'') || str[index] == '-') 
+                if ((Char.IsLetter(str[index]) || str[index] == '\'') || str[index] == '-')
                     index++;
                 else break;
             }
@@ -63,7 +63,7 @@ namespace Lab_8
                 if (!Char.IsLetter(str[index])) index++;
                 else break;
             }
-            if (index == str.Length) return -1; 
+            if (index == str.Length) return -1;
             if (Char.IsDigit(str[index - 1]))
                 index = NextWord(str, index);
             return index;
@@ -163,7 +163,7 @@ namespace Lab_8
             string answer = "";
             foreach ((char letter, double sentense) in _output)
             {
-                answer += $"{letter} - {FreqFormat(sentense)}\n";
+                answer += $"{letter} - {FreqFormat(sentense)}{Environment.NewLine}";
             }
             return answer.Remove(answer.Length - 1, 1);
         }
