@@ -165,7 +165,12 @@ namespace Lab_8
             {
                 answer += $"{letter} - {FreqFormat(sentense)}{Environment.NewLine}";
             }
-            return answer.Remove(answer.Length - 1, 1);
+            //answer = answer.Remove(answer.Length - 1, 1);
+            if (answer.Length >= Environment.NewLine.Length)
+            {
+                answer = answer.Remove(answer.Length - Environment.NewLine.Length, Environment.NewLine.Length);
+            }
+            return answer;
         }
     }
 }
