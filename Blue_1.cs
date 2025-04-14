@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +69,7 @@ namespace Lab_8
 
             for (int i = 0; i < _output.Length; i++)
             {
-                log += $"{_output[i]}\n";
+                log += $"{_output[i]}{Environment.NewLine}";
             }
             log = log.Remove(log.Length - 1, 1);
 
