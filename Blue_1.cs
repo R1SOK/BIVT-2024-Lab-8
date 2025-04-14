@@ -71,8 +71,11 @@ namespace Lab_8
             {
                 log += $"{_output[i]}{Environment.NewLine}";
             }
-            log = log.Remove(log.Length - 1, 1);
-
+            //log = log.Remove(log.Length - 1, 1);
+            if (log.Length >= Environment.NewLine.Length)
+            {
+                log = log.Remove(log.Length - Environment.NewLine.Length, Environment.NewLine.Length);
+            }
             return log;
         }
     }
